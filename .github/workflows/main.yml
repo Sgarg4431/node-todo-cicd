@@ -12,7 +12,9 @@ jobs:
         run: docker login -u ${{ secrets.dockerUser }} -p ${{ secrets.dockerPass }}
       - name: build docker image
         run: docker build -t node-todo .
-      - name: push the image to docker hub
+      - name: changing the name of image 
+        run: docker tag node-todo ${{ secrets.dockerUser }}/node-todo:latest
+      - name: push the image to docker
         run: docker push ${{ secrets.dockerUser }}/node-todo:latest
 
   deploy:

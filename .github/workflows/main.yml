@@ -16,7 +16,5 @@ jobs:
         run: docker tag node-todo ${{ secrets.dockerUser }}/node-todo:latest
       - name: push the image to docker
         run: docker push ${{ secrets.dockerUser }}/node-todo:latest
-      - name: pull the image from docker hub
-        run: docker pull ${{ secrets.dockerUser }}/nodo-todo:latest
       - name: run the container
         run: docker run -d -p 5000:5000 --name nodejs-app-container ${{ secrets.dockerUser }}/node-todo:latest }}

@@ -16,11 +16,6 @@ jobs:
         run: docker tag node-todo ${{ secrets.dockerUser }}/node-todo:latest
       - name: push the image to docker
         run: docker push ${{ secrets.dockerUser }}/node-todo:latest
-
-  deploy:
-    needs: build
-    runs-on: [aws-ec2]
-    steps:
       - name: pull the image from docker hub
         run: docker pull ${{ secrets.dockerUser }}/nodo-todo:latest
       - name: run the container

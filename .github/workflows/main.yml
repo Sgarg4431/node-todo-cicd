@@ -19,4 +19,4 @@ jobs:
       - name: pull the image from docker hub
         run: docker pull ${{ secrets.dockerUser }}/nodo-todo:latest
       - name: run the container
-        run: docker run -d -p 5000:5000 --name nodejs-app-container ${{ secrets.dockerUser }}/node-todo:latestsecrets.dockerUser }}/node-todo:latest
+        run: docker run -d -p 5000:5000 --name nodejs-app-container ${{ secrets.dockerUser }}/node-todo:latest }}
